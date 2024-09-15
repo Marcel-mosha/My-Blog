@@ -11,7 +11,9 @@ from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
+from dotenv import load_dotenv
 
+load_dotenv()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 ckeditor = CKEditor(app)
